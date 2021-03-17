@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
-  let name = 'aaa'
+  const name = 'aaa'
   return (
     <div className="App">
       <header className="App-header">
