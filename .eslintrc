@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "jest"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "linebreak-style": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    }
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".css", ".json", ".scss"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
