@@ -1,12 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Helmet } from 'react-helmet'
 import './index.scss'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>React Typescript Boilerplate</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <App />
+    </>
   </React.StrictMode>,
   document.getElementById('root'),
 )
