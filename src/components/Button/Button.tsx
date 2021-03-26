@@ -1,9 +1,9 @@
 import './button.module.scss'
 
-type ButtonProps = {
+export interface ButtonProps {
   label?: string
   className?: string
-  style?: Object
+  style?: {}
   // spinnerStyle?: Object
   children?: Node
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
@@ -11,33 +11,24 @@ type ButtonProps = {
   isLoading?: boolean
 }
 
-const defaultProps = {
-  label: '',
-  className: '',
-  style: {},
-  // spinnerStyle: {},
-  onClick: () => {},
-  children: null,
-  disabled: false,
-  isLoading: false,
-}
-
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   label,
-  className,
-  style,
+  className = '',
+  style = {},
   // spinnerStyle,
-  onClick,
+  onClick = () => null,
   children,
-  disabled,
-  isLoading,
-}: ButtonProps) => (
+  disabled = false,
+  isLoading = false,
+  ...props
+}) => (
   <button
     type="button"
     className={className}
     style={style}
     onClick={onClick}
     disabled={disabled || isLoading}
+    {...props}
   >
     {/* {isLoading ? (
       <Spinner iconStyle={spinnerStyle} />
@@ -53,7 +44,5 @@ const Button = ({
     </>
   </button>
 )
-
-Button.defaultProps = defaultProps
 
 export default Button
