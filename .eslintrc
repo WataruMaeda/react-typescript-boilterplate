@@ -27,12 +27,20 @@
       {
         "endOfLine": "auto"
       }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.tsx"]
+      }
     ]
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/dot-notation": ["off"]
+      }
     }
   ],
   "parserOptions": {
