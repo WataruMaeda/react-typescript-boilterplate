@@ -1,10 +1,11 @@
+import Spinner from '../Spinner'
 import './button.module.scss'
 
 export interface ButtonProps {
   label?: string
   className?: string
   style?: {}
-  // spinnerStyle?: Object
+  spinnerStyle?: {}
   children?: Node
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   disabled?: boolean
@@ -15,12 +16,15 @@ const Button: React.FC<ButtonProps> = ({
   label,
   className = '',
   style = {},
-  // spinnerStyle,
+  spinnerStyle = {
+    color: 'black',
+    size: '1.5rem',
+  },
   onClick = () => null,
   children,
   disabled = false,
   isLoading = false,
-  ...props
+  ...others
 }) => (
   <button
     type="button"
@@ -28,20 +32,16 @@ const Button: React.FC<ButtonProps> = ({
     style={style}
     onClick={onClick}
     disabled={disabled || isLoading}
-    {...props}
+    {...others}
   >
-    {/* {isLoading ? (
-      <Spinner iconStyle={spinnerStyle} />
+    {isLoading ? (
+      <Spinner {...spinnerStyle} isLoading={isLoading} />
     ) : (
       <>
         {label}
         {children}
       </>
-    )} */}
-    <>
-      {label}
-      {children}
-    </>
+    )}
   </button>
 )
 
