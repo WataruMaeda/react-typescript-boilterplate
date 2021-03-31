@@ -2,13 +2,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { actions as appActions } from 'modules/app.module'
+// add more actions here...
 
 import { Dispatch, State } from './store'
 
-interface ConnectorProps {
+export interface ConnectorProps {
   state: State
   actions: {}
-  children: (props: { state: State; actions: {} }) => null
+  children: (props: { state: State; actions: {} }) => any
 }
 
 const Connector: React.FC<ConnectorProps> = ({ state, actions, children }) =>
@@ -18,7 +19,7 @@ const mapStateToProps = (state: State) => ({ state })
 const mapDispatchToProps = (dispatch: Dispatch) => {
   const actionList = [
     { label: 'app', value: appActions },
-    // add more actions here
+    // add more actions here...
   ]
 
   return {

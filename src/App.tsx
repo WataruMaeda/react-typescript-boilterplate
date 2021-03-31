@@ -1,27 +1,37 @@
 import Button from 'components/Button'
+import Connector from 'utils/connector'
 import logo from './logo.svg'
 import './App.scss'
 
-function App() {
+interface AppProps {
+  appActions: {}
+  loggedIn: boolean
+}
+
+const App: React.FC<AppProps> = ({ appActions, loggedIn }) => {
+  const handleUpdateLogin = () => {
+    console.log('[##] actions', appActions)
+    // actions.setLoggedIn({ payload: !loggedIn })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button label="test" />
+        <p>{`Dashboard: login status: ${loggedIn}`}</p>
+        <Button label="Update Login Status" onClick={handleUpdateLogin} />
       </header>
     </div>
   )
 }
 
-export default App
+export default (props: {}) => (
+  <Connector>
+    {({
+      actions,
+      state: {
+        app: { loggedIn },
+      },
+    }) => <App appActions={actions} loggedIn={loggedIn} {...props} />}
+  </Connector>
+)

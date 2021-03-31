@@ -20,6 +20,4 @@ const slice = createSlice({
 })
 
 export const { actions } = slice
-export const { setLoggedIn } = slice.actions
-
 export default slice.reducer
