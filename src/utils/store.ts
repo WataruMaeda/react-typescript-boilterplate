@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import app from 'modules/app.module'
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     app,
   },
@@ -15,3 +15,5 @@ export type Thunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >
+
+export default store

@@ -9,6 +9,7 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = ({ appActions, loggedIn }) => {
+  console.log('[##] loggedIn', loggedIn)
   const handleUpdateLogin = () => {
     console.log('[##] actions', appActions)
     // actions.setLoggedIn({ payload: !loggedIn })
