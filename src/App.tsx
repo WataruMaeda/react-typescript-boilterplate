@@ -1,14 +1,14 @@
 import Button from 'components/Button'
 import { actions, selector } from 'modules/app.module'
-import { useAppDispatch, useAppSelector } from 'utils/hook'
+import { useDispatch, useSelector } from 'utils/hook'
 import logo from './logo.svg'
 import './App.scss'
 
 const App = () => {
-  const appState = useAppSelector(selector)
-  const dispatch = useAppDispatch()
+  const state = useSelector(selector)
+  const dispatch = useDispatch()
   console.log('[##] actions', actions)
-  console.log('[##] state', appState)
+  console.log('[##] state', state)
   const handleUpdateLogin = () => {
     dispatch(actions.setLoggedIn(true))
     // console.log('[##] actions', appActions)
