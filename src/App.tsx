@@ -1,17 +1,17 @@
 import Button from 'components/Button'
-import Connector from 'utils/connector'
+import { actions, selector } from 'modules/app.module'
+import { useAppDispatch, useAppSelector } from 'utils/hook'
 import logo from './logo.svg'
 import './App.scss'
 
-interface AppProps {
-  appActions: {}
-  loggedIn: boolean
-}
-
-const App: React.FC<AppProps> = ({ appActions, loggedIn }) => {
-  console.log('[##] loggedIn', loggedIn)
+const App = () => {
+  const appState = useAppSelector(selector)
+  const dispatch = useAppDispatch()
+  console.log('[##] actions', actions)
+  console.log('[##] state', appState)
   const handleUpdateLogin = () => {
-    console.log('[##] actions', appActions)
+    dispatch(actions.setLoggedIn(true))
+    // console.log('[##] actions', appActions)
     // actions.setLoggedIn({ payload: !loggedIn })
   }
 
@@ -19,20 +19,11 @@ const App: React.FC<AppProps> = ({ appActions, loggedIn }) => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>{`Dashboard: login status: ${loggedIn}`}</p>
+        {/* <p>{`Dashboard: login status: ${loggedIn}`}</p> */}
         <Button label="Update Login Status" onClick={handleUpdateLogin} />
       </header>
     </div>
   )
 }
 
-export default (props: {}) => (
-  <Connector>
-    {({
-      actions,
-      state: {
-        app: { loggedIn },
-      },
-    }) => <App appActions={actions} loggedIn={loggedIn} {...props} />}
-  </Connector>
-)
+export default App
