@@ -7,12 +7,8 @@ import './App.scss'
 const App = () => {
   const state = useSelector(selector)
   const dispatch = useDispatch()
-  console.log('[##] actions', actions)
-  console.log('[##] state', state)
   const handleUpdateLogin = () => {
-    dispatch(actions.setLoggedIn(true))
-    // console.log('[##] actions', appActions)
-    // actions.setLoggedIn({ payload: !loggedIn })
+    dispatch(actions.setLoggedIn(!state.loggedIn))
   }
 
   return (
