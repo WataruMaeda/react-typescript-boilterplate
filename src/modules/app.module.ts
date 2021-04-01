@@ -19,11 +19,12 @@ const initialState: AppState = {
 
 // ------------------------------------
 // Actions
-// ------------------------------------
+// -----------------------------------
 
-function setLoggedIn(state: AppState, action: PayloadAction<boolean>) {
-  state.loggedIn = action.payload
-}
+const setLoggedIn = (state: AppState, action: PayloadAction<boolean>) => ({
+  ...state,
+  loggedIn: action.payload,
+})
 
 const slice = createSlice({
   name: 'app',
@@ -39,4 +40,5 @@ const slice = createSlice({
 
 export const { actions } = slice
 export const selector = (state: State) => state.app
+
 export default slice.reducer
