@@ -1,7 +1,7 @@
 import './button.module.scss'
 import Spinner from '../Spinner'
 
-export interface ButtonProps {
+export interface IButton {
   label?: string
   className?: string
   style?: {}
@@ -12,7 +12,7 @@ export interface ButtonProps {
   isLoading?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<IButton> = ({
   label,
   className = '',
   style = {},

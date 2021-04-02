@@ -4,9 +4,8 @@ import { Helmet } from 'react-helmet'
 import { Provider } from 'react-redux'
 import store from 'utils/store'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 import './index.scss'
-import App from './App'
+import Router from './routes'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
@@ -18,7 +17,7 @@ ReactDOM.render(
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Provider store={store}>
-        <App />
+        <Router />
       </Provider>
     </>
   </React.StrictMode>,

@@ -8,14 +8,14 @@ import { ClipLoader, BeatLoader } from 'react-spinners'
  * https://github.com/davidhu2000/react-spinners
  */
 
-export interface SpinnerProps {
+export interface ISpinner {
   type?: 'clip' | 'beat'
   color?: string
   size?: string | number
   isLoading?: boolean
 }
 
-const Spinner: React.FC<SpinnerProps> = ({
+const Spinner: React.FC<ISpinner> = ({
   type = 'clip',
   color = 'black',
   size = '1.5rem',
