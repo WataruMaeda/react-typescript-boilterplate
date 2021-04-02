@@ -8,14 +8,14 @@ const App = () => {
   const state = useSelector(selector)
   const dispatch = useDispatch()
   const handleUpdateLogin = () => {
-    dispatch(actions.setLoggedIn(!state.loggedIn))
+    dispatch(actions.setLoginAsync())
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>{`Dashboard: login status: ${loggedIn}`}</p> */}
+        <p>{`Dashboard: login status: ${state.loggedIn}`}</p>
         <Button label="Update Login Status" onClick={handleUpdateLogin} />
       </header>
     </div>

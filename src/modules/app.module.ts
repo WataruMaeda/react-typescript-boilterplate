@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { State } from 'utils/store'
+import { Dispatch, State } from 'utils/store'
 
 // ------------------------------------
 // Types
@@ -18,27 +18,35 @@ const initialState: AppState = {
 }
 
 // ------------------------------------
-// Actions
+// Slices
 // -----------------------------------
-
-const setLoggedIn = (state: AppState, action: PayloadAction<boolean>) => ({
-  ...state,
-  loggedIn: action.payload,
-})
 
 const slice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setLoggedIn,
+    setLoggedIn: (state: AppState, action: PayloadAction<boolean>) => ({
+      ...state,
+      loggedIn: action.payload,
+    }),
   },
 })
+
+// ------------------------------------
+// Actions
+// -----------------------------------
+
+const setLoginAsync = () => (dispatch: Dispatch) => {
+  setTimeout(() => {
+    dispatch(slice.actions.setLoggedIn(true))
+  }, 1000)
+}
 
 // ------------------------------------
 // Exports
 // ------------------------------------
 
-export const { actions } = slice
+export const actions = { ...slice.actions, setLoginAsync }
 export const selector = (state: State) => state.app
 
 export default slice.reducer
