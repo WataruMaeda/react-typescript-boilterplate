@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Spinner, { SpinnerProps } from './Spinner'
+import Spinner, { ISpinner } from '../components/Spinner/Spinner'
 
-const Template: Story<SpinnerProps> = (args) => <Spinner {...args} />
+const Template: Story<ISpinner> = (args) => <Spinner {...args} />
 
 export const Clip = Template.bind({})
 Clip.args = {

@@ -1,26 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Helmet } from 'react-helmet'
-import { Provider } from 'react-redux'
-import store from 'utils/store'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-import './index.scss'
-import App from './App'
+import App from './app'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>React Typescript Boilerplate</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </>
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 )

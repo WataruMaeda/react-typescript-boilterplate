@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Button, { ButtonProps } from './Button'
+import Button, { IButton } from '../components/Button/Button'
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
+const Template: Story<IButton> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
