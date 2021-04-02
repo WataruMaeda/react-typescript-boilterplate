@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import App from './App'
+import Dashboard from 'scenes/dashboard'
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={App} />
+        <Route path="/" component={Dashboard} />
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>

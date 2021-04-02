@@ -1,10 +1,10 @@
 import Button from 'components/Button'
 import { actions, states } from 'modules/app.module'
 import { useDispatch, useSelector } from 'utils/hook'
-import logo from './logo.svg'
-import './App.scss'
+import logo from 'assets/images/logo.svg'
+import './dashboard.scss'
 
-const App = () => {
+const Dashboard = () => {
   const { loggedIn } = useSelector(states)
   const dispatch = useDispatch()
   const handleUpdateLogin = () => {
@@ -22,4 +22,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Dashboard
