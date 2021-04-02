@@ -1,9 +1,4 @@
-import {
-  configureStore,
-  ThunkAction,
-  Action,
-  getDefaultMiddleware,
-} from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import logger from 'redux-logger'
 import app from 'modules/app.module'
 
@@ -18,12 +13,6 @@ const store = configureStore({
 })
 
 export type State = ReturnType<typeof store.getState>
-export type Dispatch = typeof store.dispatch | any
-export type Thunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  State,
-  unknown,
-  Action<string>
->
+export type Dispatch = typeof store.dispatch
 
 export default store

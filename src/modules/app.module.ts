@@ -47,6 +47,6 @@ const setLoginAsync = () => (dispatch: Dispatch) => {
 // ------------------------------------
 
 export const actions = { ...slice.actions, setLoginAsync }
-export const selector = (state: State) => state.app
+export const states = (state: State) => state.app
 
 export default slice.reducer
