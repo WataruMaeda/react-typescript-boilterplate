@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Spinner, { ISpinner } from './Spinner'
+import Spinner, { ISpinner } from '../components/Spinner/Spinner'
 
 const Template: Story<ISpinner> = (args) => <Spinner {...args} />
 

@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Button, { IButton } from './Button'
+import Button, { IButton } from '../components/Button/Button'
 
 const Template: Story<IButton> = (args) => <Button {...args} />
 

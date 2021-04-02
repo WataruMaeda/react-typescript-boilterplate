@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Provider } from 'react-redux'
 import store from 'utils/store'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.scss'
+import 'theme/app.scss'
 import Router from './routes'
 import reportWebVitals from './reportWebVitals'
 
