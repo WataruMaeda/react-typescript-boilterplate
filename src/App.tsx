@@ -1,24 +1,22 @@
 import Button from 'components/Button'
+import { actions, states } from 'modules/app.module'
+import { useDispatch, useSelector } from 'utils/hook'
 import logo from './logo.svg'
 import './App.scss'
 
-function App() {
+const App = () => {
+  const { loggedIn } = useSelector(states)
+  const dispatch = useDispatch()
+  const handleUpdateLogin = () => {
+    dispatch(actions.setLoginAsync())
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button label="test" />
+        <p>{`Dashboard: login status: ${loggedIn}`}</p>
+        <Button label="Update Login Status" onClick={handleUpdateLogin} />
       </header>
     </div>
   )

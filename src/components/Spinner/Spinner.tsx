@@ -9,15 +9,15 @@ import { ClipLoader, BeatLoader } from 'react-spinners'
  */
 
 export interface SpinnerProps {
-  type: 'clip' | 'beat'
-  color: String
-  size: String | Number
-  isLoading: Boolean
+  type?: 'clip' | 'beat'
+  color?: string
+  size?: string | number
+  isLoading?: boolean
 }
 
 const Spinner: React.FC<SpinnerProps> = ({
   type = 'clip',
-  color = 'red',
+  color = 'black',
   size = '1.5rem',
   isLoading = false,
   ...others

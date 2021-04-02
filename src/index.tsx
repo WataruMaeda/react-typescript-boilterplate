@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Helmet } from 'react-helmet'
+import { Provider } from 'react-redux'
+import store from 'utils/store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './index.scss'
@@ -15,7 +17,9 @@ ReactDOM.render(
         <title>React Typescript Boilerplate</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </>
   </React.StrictMode>,
   document.getElementById('root'),
