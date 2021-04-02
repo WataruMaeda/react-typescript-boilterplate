@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import App from './Dashboard'
+import App from './app'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
