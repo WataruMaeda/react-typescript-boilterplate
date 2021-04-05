@@ -34,15 +34,15 @@ const styles: { [key: string]: string } = styler({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: 16,
+    // marginBottom: 16,
   },
   label: {
     fontSize: 16,
     marginBottom: 0,
   },
   border: {
-    display: 'block',
-    borderBottom: '1px solid black',
+    // display: 'block',
+    // borderBottom: '1px solid black',
     width: '100%',
   },
   error: {
@@ -85,15 +85,15 @@ const Selector: React.FC<ISelect> = ({
       indicatorsContainer: (x: { [key: string]: any }) =>
         rem({
           ...x,
-          marginRight: 10,
+          // marginRight: 10,
         }),
       control: (x: { [key: string]: any }) =>
         rem({
           ...x,
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-          border: 'none',
-          padding: 0,
+          // backgroundColor: 'transparent',
+          // boxShadow: 'none',
+          // border: 'none',
+          // padding: 0,
         }),
       option: (x: { [key: string]: any }, option: { isFocused: boolean }) =>
         rem({
@@ -112,19 +112,19 @@ const Selector: React.FC<ISelect> = ({
       placeholder: (x: { [key: string]: any }) =>
         rem({
           ...x,
-          color: colors.gray,
-          fontSize: 12,
+          // color: colors.gray,
+          // fontSize: 12,
         }),
       valueContainer: (x: { [key: string]: any }) =>
         rem({
           ...x,
-          marginLeft: 0,
-          fontSize: 14,
+          // marginLeft: 0,
+          // fontSize: 14,
         }),
       multiValue: (x: { [key: string]: any }) =>
         rem({
           ...x,
-          marginLeft: 10,
+          // marginLeft: 10,
         }),
       multiValueLabel: (x: { [key: string]: any }) =>
         rem({
@@ -148,7 +148,7 @@ const Selector: React.FC<ISelect> = ({
     theme: (t: { [key: string]: any }) =>
       rem({
         ...t,
-        borderRadius: 4,
+        // borderRadius: 4,
         colors: {
           ...t.colors,
         },
