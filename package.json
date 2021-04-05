@@ -51,7 +51,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,scss}": [
       "prettier --write",
-      "yarn lint"
+      "yarn lint",
+      "yarn test --watchAll=false --passWithNoTests"
     ]
   },
   "eslintConfig": {

@@ -1,4 +1,4 @@
-import './button.module.scss'
+import './button.scss'
 import Spinner from '../Spinner'
 
 export interface IButton {

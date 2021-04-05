@@ -27,8 +27,6 @@ const App = () => {
     })
   }, [])
 
-  console.log('[##] styles', styles.root)
-
   return (
     <div className={styles.root}>
       <Helmet>
